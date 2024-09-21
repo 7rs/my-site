@@ -1,42 +1,31 @@
-import { defineConfig } from 'astro/config';
 import path from 'node:path';
-
+import { defineConfig } from 'astro/config';
+import UnoCSS from 'unocss/astro';
 import svelte from '@astrojs/svelte';
-import mdx from '@astrojs/mdx';
-import icon from 'astro-icon';
 
-import robotsTxt from 'astro-robots-txt';
-import sitemap from '@astrojs/sitemap';
+import tsconfig from './tsconfig.json';
 
-import purgecss from 'astro-purgecss';
+function getAliasesArray() {
+  let aliasesArray: { [key: string]: string } = {};
 
-// https://astro.build/config
+  for (const [alias, targetPath] of Object.entries(tsconfig.compilerOptions.paths)) {
+    aliasesArray = {
+      ...aliasesArray,
+      ...{
+        [alias]: path.resolve(targetPath[0]),
+      },
+    };
+  }
+
+  return aliasesArray;
+}
+
 export default defineConfig({
-  server: { host: true, port: 2999 },
-  scopedStyleStrategy: 'attribute',
-  i18n: {
-    defaultLocale: 'ja',
-    locales: ['ja', 'en'],
-    fallback: {
-      en: 'ja',
-    },
-    routing: {
-      prefixDefaultLocale: false,
-    },
-  },
-  markdown: {
-    shikiConfig: {
-      theme: 'dracula',
+  vite: {
+    resolve: {
+      alias: getAliasesArray(),
     },
   },
   site: 'https://7rs.dev',
-  integrations: [svelte({ emitCss: false }), mdx(), icon({ iconDir: 'src/icons' }), robotsTxt(), sitemap(), purgecss()],
-  // https://vitejs.dev/config/
-  vite: {
-    resolve: {
-      alias: {
-        '@lib': path.resolve('./scripts/lib'),
-      },
-    },
-  },
+  integrations: [svelte(), UnoCSS()],
 });

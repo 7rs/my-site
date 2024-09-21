@@ -1,0 +1,36 @@
+---
+export interface Props {
+  favicon?: string;
+  themeColor?: string | [string, string];
+  noIndex?: boolean;
+  noTranslate?: boolean;
+}
+
+const { noIndex, favicon, themeColor = "#000000", noTranslate } = Astro.props;
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="format-detection" content="telephone=no,email=no,address=no" />
+  <meta name="referrer" content="no-referrer" />
+  <meta name="google" content="nositelinkssearchbox" />
+  {noTranslate && <meta name="googlebot" content="notranslate" />}
+  <meta
+    name="robots"
+    content={(noIndex ? "none " : "") + "noarchive nositelinkssearchbox" + (noTranslate ? "notranslate" : "")}
+  />
+  {favicon && <link rel="icon" href={favicon} type="image/svg+xml" />}
+  {
+    Array.isArray(themeColor) ? (
+      <>
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content={themeColor[0]} />
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content={themeColor[1]} />
+      </>
+    ) : (
+      <meta name="theme-color" content={themeColor} />
+    )
+  }
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+</head>
