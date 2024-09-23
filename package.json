@@ -1,25 +1,29 @@
 {
-    "type": "module",
-    "name": "root",
     "version": "0.5.0",
-    "homepage": "https://7rs.dev/",
-    "bugs": "https://github.com/7rs/pages/issues",
+    "type": "module",
+    "private": true,
+    "name": "root",
     "license": "CC0-1.0",
     "repository": "github:7rs/pages",
+    "homepage": "https://7rs.dev/",
+    "bugs": "https://github.com/7rs/pages/issues",
     "scripts": {
         "dev": "astro dev",
         "build": "astro build && pagefind --site dist",
         "preview": "astro preview"
     },
-    "private": true,
-    "workspaces": [
-        "packages/*"
-    ],
+    "workspaces": ["packages/*"],
     "dependencies": {
+        "@astrojs/mdx": "^3.1.7",
         "@astrojs/svelte": "^5.7.1",
+        "@iconify/svelte": "^4.0.2",
+        "@playform/compress": "^0.1.1",
         "astro": "^4.15.8",
+        "astro-icon": "^1.1.1",
+        "astro-purgecss": "^4.6.0",
         "autoprefixer": "^10.4.20",
         "postcss-preset-env": "^10.0.3",
+        "purgecss": "^6.0.0",
         "svelte": "^4.2.19",
         "unocss": "^0.62.4"
     },
