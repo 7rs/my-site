@@ -12,10 +12,15 @@
         "build": "astro build && pagefind --site dist",
         "preview": "astro preview"
     },
-    "workspaces": ["packages/*"],
+    "workspaces": [
+        "packages/*"
+    ],
     "dependencies": {
         "@astrojs/mdx": "^3.1.7",
         "@astrojs/svelte": "^5.7.1",
+        "@fontsource-variable/fira-code": "^5.1.0",
+        "@fontsource-variable/inter": "^5.1.0",
+        "@fontsource/biz-udgothic": "^5.1.0",
         "@iconify/svelte": "^4.0.2",
         "@playform/compress": "^0.1.1",
         "astro": "^4.15.8",

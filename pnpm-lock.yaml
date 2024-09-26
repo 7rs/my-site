@@ -14,6 +14,15 @@ importers:
       '@astrojs/svelte':
         specifier: ^5.7.1
         version: 5.7.1(astro@4.15.8(@types/node@22.5.5)(lightningcss@1.25.1)(rollup@4.22.4)(stylus@0.63.0)(terser@5.31.3)(typescript@5.6.2))(svelte@4.2.19)(typescript@5.6.2)(vite@5.4.7(@types/node@22.5.5)(lightningcss@1.25.1)(stylus@0.63.0)(terser@5.31.3))
+      '@fontsource-variable/fira-code':
+        specifier: ^5.1.0
+        version: 5.1.0
+      '@fontsource-variable/inter':
+        specifier: ^5.1.0
+        version: 5.1.0
+      '@fontsource/biz-udgothic':
+        specifier: ^5.1.0
+        version: 5.1.0
       '@iconify/svelte':
         specifier: ^4.0.2
         version: 4.0.2(svelte@4.2.19)
@@ -853,6 +862,15 @@ packages:
   '@eslint/plugin-kit@0.2.0':
     resolution: {integrity: sha512-vH9PiIMMwvhCx31Af3HiGzsVNULDbyVkHXwlemn/B0TFj/00ho3y55efXrUZTfQipxoHC5u4xq6zblww1zm1Ig==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@fontsource-variable/fira-code@5.1.0':
+    resolution: {integrity: sha512-fwJbJLvyZ2BhgBSPYCNsrQ6IFQTpRu9GWXY8N20wHTpbhV0Ro5QJihiZV060Ay3kVR6IVH/oSVe/cr7Ube28gg==}
+
+  '@fontsource-variable/inter@5.1.0':
+    resolution: {integrity: sha512-Wj2dUGP0vUpxRGQTXQTCNJO+aLcFcQm+gUPXfj/aS877bQkEPBPv9JvZJpwdm2vzelt8NTZ+ausKlBCJjh2XIg==}
+
+  '@fontsource/biz-udgothic@5.1.0':
+    resolution: {integrity: sha512-XubmPoIDzGwsPZWUWEnTSspdcXL4y0dIppM/5NlMRt4FWYnVJCjGRjHd/1XPa/tU4QD+njQsA6rOA0xsXUnM0w==}
 
   '@humanwhocodes/module-importer@1.0.1':
     resolution: {integrity: sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==}
@@ -5093,6 +5111,12 @@ snapshots:
   '@eslint/plugin-kit@0.2.0':
     dependencies:
       levn: 0.4.1
+
+  '@fontsource-variable/fira-code@5.1.0': {}
+
+  '@fontsource-variable/inter@5.1.0': {}
+
+  '@fontsource/biz-udgothic@5.1.0': {}
 
   '@humanwhocodes/module-importer@1.0.1': {}
 

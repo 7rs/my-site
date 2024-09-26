@@ -8,6 +8,7 @@
         "esbenp.prettier-vscode",
         "stylelint.vscode-stylelint",
         "sysoev.language-stylus",
-        "svelte.svelte-vscode"
+        "svelte.svelte-vscode",
+        "antfu.unocss"
     ]
 }

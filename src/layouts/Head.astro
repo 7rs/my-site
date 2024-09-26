@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
+
 export interface Props {
   favicon?: string;
   themeColor?: string | [string, string];
@@ -10,6 +12,7 @@ const { noIndex, favicon, themeColor = "#000000", noTranslate } = Astro.props;
 ---
 
 <head>
+  <ViewTransitions />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
