@@ -4,10 +4,10 @@
 
 ## Components  
 
-### [Header](/docs/rd/header)  
+### [Header](/docs/rd/header.md)  
 
   Used to set up the website and view the table of contents.
 
-### [Footer](/docs/rd/footer)  
+### [Footer](/docs/rd/footer.md)  
 
   Used for navigation and information display.

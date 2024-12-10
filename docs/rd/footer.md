@@ -1,6 +1,6 @@
 # Footer  
 
-  [Used in the main template.](/docs/rd/main-template)
+  [Used in the main template.](/docs/rd/main-template.md)
   Used for navigation and information display.
 
 ## Objects for a footer  

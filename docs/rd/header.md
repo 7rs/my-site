@@ -1,6 +1,6 @@
 # Header  
 
-  [Used in the main template.](/docs/rd/main-template)
+  [Used in the main template.](/docs/rd/main-template.md)
   Used to set up the website and view the table of contents.
 
 ## Objects for a header  
