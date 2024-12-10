@@ -6,7 +6,6 @@
     "semi": true,
     "endOfLine": "lf",
     "options.editorconfig": true,
-    "plugins": ["prettier-plugin-astro", "prettier-plugin-stylus", "prettier-plugin-svelte"],
     "astroAllowShorthand": false,
     "overrides": [
         {
@@ -15,30 +14,6 @@
                 "parser": "json",
                 "tabWidth": 4
             }
-        },
-        {
-            "files": [
-                "*.js",
-                "*.jsx",
-                "*.test.js",
-                "*.ts",
-                "*.test.ts",
-                "*.tsx",
-                "*.svelte",
-                "*.mjs",
-                "*.*.mjs",
-                "*.cjs",
-                "*.*.cjs",
-                "astro.config.mjs",
-                "postcss.config.mjs"
-            ],
-            "options": {
-                "singleQuote": true
-            }
-        },
-        {
-            "files": ["*.styl"],
-            "options": { "trailingComma": "all" }
         }
     ]
 }

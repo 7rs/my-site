@@ -3,20 +3,6 @@
         "indentStyle": "space",
         "lineWidth": 120
     },
-    "linter": {
-        "enabled": true,
-        "rules": {
-            "style": {
-                "noUselessElse": "off"
-            }
-        }
-    },
-    "files": {
-        "ignore": ["*.svelte", "**/node_modules/**", "**/dist/**"]
-    },
-    "javascript": {
-        "globals": ["Astro"]
-    },
     "overrides": [
         {
             "include": [".prettierrc", "*.json"],
@@ -29,28 +15,6 @@
             "json": {
                 "parser": {
                     "allowComments": true
-                }
-            }
-        },
-        {
-            "include": [
-                "*.ts",
-                "*.*.ts",
-                "**/*.ts",
-                "*.js",
-                "**/*.js",
-                "*.*.js",
-                "*.mjs",
-                "*.*.mjs",
-                "postcss.config.mjs",
-                "**/*.mjs",
-                "*.astro",
-                "**/*.astro"
-            ],
-            "javascript": {
-                "formatter": {
-                    "quoteStyle": "single",
-                    "jsxQuoteStyle": "single"
                 }
             }
         }

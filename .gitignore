@@ -1,20 +1,9 @@
-# Outputs
-data/
-dist/
-node_modules/
-.astro/
-.git/
-*-lighthouse.html
-lighthouse.html
+**/dist/**
+**/node_modules/**
 
-# Logs
-*.log*
+**/.git/**
+**/*.log*
+**/.env*
 
-# Environment variables
-.env*
-
-# Environment-dependent files
-.DS_Store
-*.Identifier
-
-*storybook.log
+**/.DS_Store
+**/*.Identifier

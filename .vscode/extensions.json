@@ -9,6 +9,8 @@
         "stylelint.vscode-stylelint",
         "sysoev.language-stylus",
         "svelte.svelte-vscode",
-        "antfu.unocss"
+        "antfu.unocss",
+        "usernamehw.errorlens",
+        "yoavbls.pretty-ts-errors"
     ]
 }
