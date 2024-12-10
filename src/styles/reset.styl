@@ -15,8 +15,13 @@
   background-color transparent
 
 :where(body)
+  --max-content-width 768px
+
   min-height 100dvh
   height 100dvh
-  max-width 768px
+  max-width var(--max-content-width)
   margin-left auto
   margin-right auto
+
+:where(svg)
+  display block
