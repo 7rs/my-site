@@ -21,4 +21,6 @@
 ## Features for a footer  
 
 <!-- -->
+- **Animations**  
+Any type of animation, but playback time should be shortened.
 <!-- -->
