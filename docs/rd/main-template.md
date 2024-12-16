@@ -11,3 +11,7 @@
 ### [Footer](/docs/rd/footer.md)  
 
   Used for navigation and information display.
+
+### [Sidebar](/docs/rd/sidebar.md)  
+
+  Used to display the table of contents.

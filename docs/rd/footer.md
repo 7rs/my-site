@@ -15,7 +15,7 @@
 - **Social icons**  
   YouTube, GitHub and etc.
 - **Build informations**  
-  From a security standpoint, it's better not to write it. But since it is open source, it's no use in hiding it.
+  From a security standpoint, it isn't good. But since it's open source, it's no use in hiding it.
 <!-- -->
 
 ## Features for a footer  

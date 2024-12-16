@@ -27,8 +27,8 @@
   Header automatically hides when scrolling down and reappears when scrolling up.
 - **Manual hide**  
   Allows a header to be hidden and redisplayed, and return to the open state when reloading.
-- **Auto tracing for table of contents**  
-  Displays headings with h1 - h6 id set.
+- **Scrollspy**  
+  Indicate an active heading.
 - **Search**  
   Search for entire website, not articles.
 - **Label**  
