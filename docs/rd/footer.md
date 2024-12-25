@@ -1,26 +1,25 @@
 # Footer  
 
-  [Used in the main template.](/docs/rd/main-template.md)
-  Used for navigation and information display.
+  [Used in the main template.](/docs/rd/main-template.md)  
 
 ## Objects for a footer  
 
 <!-- -->
-- **Navigations**  
-  The header has navigation too but, a footer always shows detailed navigation.
-- **Jump to top** _(Button)_  
-  Scroll to the top automatically.
-- **Copyright**  
-  Displays of thelicense for Pages and rights to contents.
+- **Top Button**  
+  Places a button to scroll to the top automatically.
 - **Social icons**  
-  YouTube, GitHub and etc.
+  Displays link icons for YouTube, GitHub and etc.
+- **Navigations**  
+  Displays the page links of the website.
+- **Copyright**  
+  Displays of the license for Pages and rights to contents.
 - **Build informations**  
-  From a security standpoint, it isn't good. But since it's open source, it's no use in hiding it.
+  Displays the version and build informations.
 <!-- -->
 
 ## Features for a footer  
 
 <!-- -->
-- **Animations**  
-Any type of animation, but playback time should be shortened.
+- **Jump to top**  
+  Scrolls to the top automatically.
 <!-- -->

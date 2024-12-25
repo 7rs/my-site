@@ -1,17 +1,21 @@
 # Main Template  
 
-  Need a base template to create websites efficiently and to unify the UI design.
+  Templates are needed to unify UI.
 
 ## Components  
 
 ### [Header](/docs/rd/header.md)  
 
-  Used to set up the website and view the table of contents.
+  Menu bar are needed to make page contents more readable.  
+  If place it at the bottom, it covers the footer, so gotta place it at the top.  
 
 ### [Footer](/docs/rd/footer.md)  
 
-  Used for navigation and information display.
+  Footer is needed to display informations, credits, navigations, etc.  
+  It's placed at the bottom because it isn't so important.  
 
-### [Sidebar](/docs/rd/sidebar.md)  
+### [Sidebar (Wide screen only)](/docs/rd/sidebar.md)  
 
-  Used to display the table of contents.
+  For example, in blogs on a PC screen, margins is created to limit the width of the content.  
+  Places the sidebar in that margin.  
+  Displays active table of contents, page informations, etc. in the sidebar.  
