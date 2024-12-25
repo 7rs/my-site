@@ -29,5 +29,5 @@
 - **Scrollspy**  
   Displays and indicates an active heading.
 - **Search**  
-  Searchs within the website and display links to the pages.
+  [See RD in the search.](/docs/rd/search.md)
 <!-- -->
