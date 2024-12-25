@@ -19,3 +19,14 @@
   For example, in blogs on a PC screen, margins is created to limit the width of the content.  
   Places the sidebar in that margin.  
   Displays active table of contents, page informations, etc. in the sidebar.  
+
+## Features  
+
+<!--  -->
+- **Customize**  
+  Allows hide or replace components as needed.
+- **Background**  
+  Allows set background image and background color easily.
+- **Font Family**  
+  Allows set any fonts easily.
+<!--  -->
