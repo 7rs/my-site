@@ -74,7 +74,11 @@
 
   [See the design of the search.](/docs/design/search.md)  
 
+### Color scheme  
+
+  [See the design of the color scheme.](/docs/design/color-scheme.md)  
+
 ## Prototypes  
 
-![Mobile layout](/docs/design/assets/header_mobile.jpg)  
-![PC layout](/docs/design/assets/header_pc.jpg)  
+![layouts](/docs/design/assets/headers-light.jpg)  
+![layouts](/docs/design/assets/headers-dark.jpg)  
