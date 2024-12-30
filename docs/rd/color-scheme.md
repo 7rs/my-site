@@ -2,6 +2,7 @@
 
   [Used in the header.](/docs/rd/header.md)  
   However, probably most components and most templates use this.  
+  [**This RD has been moved to the design phase.**](/docs/design/color-scheme.md)  
 
 ## Summary  
 

@@ -2,6 +2,7 @@
 
   [Used in the header.](/docs/rd/header.md)  
   However, others might use this.  
+  [**This RD has been moved to the design phase.**](/docs/design/search.md)  
 
 ## Summary  
 
