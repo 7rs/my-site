@@ -1,6 +1,7 @@
 # Header  
 
   [Used in the main template.](/docs/rd/main-template.md)  
+  [**This RD has been moved to the design phase.**](/docs/design/header.md)  
 
 ## Objects for a header  
 
