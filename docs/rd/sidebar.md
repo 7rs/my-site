@@ -1,6 +1,7 @@
 # Sidebar  
 
   [Used in the main template.](/docs/rd/main-template.md)  
+  [**This RD has been moved to the design phase.**](/docs/design/sidebar.md)  
 
 ## Objects for a sidebar  
 
