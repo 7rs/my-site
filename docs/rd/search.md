@@ -1,19 +1,22 @@
 # Search  
 
   [Used in the header.](/docs/rd/header.md)  
+  However, others might use this.  
 
 ## Summary  
 
-  Searchs within the website and display links to the pages.
+  Searchs within the website and display links to the pages.  
 
-## Required objects  
+## Searching page  
+
+### Required objects  
 
 <!--  -->
 - **Keyword**  
   keywords to search article titles or contents.
 <!--  -->
 
-## Objects to return  
+### Objects to return  
 
 <!--  -->
 - **Page**  
