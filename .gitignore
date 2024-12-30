@@ -3,7 +3,8 @@
 
 **/.git/**
 **/*.log*
-**/.env*
+**/*.local
+**/.astro/**
 
 **/.DS_Store
 **/*.Identifier

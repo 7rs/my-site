@@ -1,0 +1,22 @@
+---
+import "@styles/fontsource.styl"
+
+interface Props {
+  title?: string;
+  lang?: string;
+  
+}
+
+const { title = "No title", lang = "en" } = Astro.props;
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{title}</title>
+  </head>
+  <body>
+    <main><slot /></main>
+  </body>
+</html>

@@ -1,2 +1,5 @@
 *.md
 *.mdx
+*.json
+*.jsonc
+.prettierrc

@@ -7,13 +7,17 @@
     "endOfLine": "lf",
     "options.editorconfig": true,
     "astroAllowShorthand": false,
+    "plugins": ["prettier-plugin-astro", "prettier-plugin-svelte", "prettier-plugin-stylus"],
     "overrides": [
         {
-            "files": [".prettierrc", "*.json"],
+            "files": ["*.ts", "*.js", "*.mjs"],
             "options": {
-                "parser": "json",
-                "tabWidth": 4
+                "singleQuote": true
             }
+        },
+        {
+            "files": ["*.styl"],
+            "options": { "trailingComma": "all" }
         }
     ]
 }

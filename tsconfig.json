@@ -1,0 +1,20 @@
+{
+    "extends": "astro/tsconfigs/base",
+    "exclude": ["**/node_modules/**"],
+    "compilerOptions": {
+        "module": "nodenext",
+        "moduleResolution": "NodeNext",
+        "resolveJsonModule": true,
+        "baseUrl": ".",
+        "paths": {
+            "@scripts/*": ["scripts/*"],
+            "@components/*": ["src/components/*"],
+            "@content/*": ["src/content/*"],
+            "@icons/*": ["src/icons/*"],
+            "@layouts/*": ["src/layouts/*"],
+            "@pages/*": ["src/pages/*"],
+            "@styles/*": ["src/styles/*"],
+            "@/*": ["src/*"]
+        }
+    }
+}
