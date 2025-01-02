@@ -27,8 +27,9 @@ export default defineConfig({
     import.meta.env.DEV &&
       astrobook({
         directory: 'src/components/astrobook-stories',
-        subpath: '/docs/components',
         head: '@layouts/Astrobook.astro',
+        subpath: '/astrobook',
+        title: 'Astrobook - Components',
       }),
   ],
   vite: {
@@ -37,4 +38,10 @@ export default defineConfig({
     },
   },
   site: 'https://7rs.dev',
+  markdown: {
+    gfm: false,
+    shikiConfig: {
+      theme: 'dracula',
+    },
+  },
 });
