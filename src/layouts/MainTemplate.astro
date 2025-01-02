@@ -1,4 +1,5 @@
 ---
+import "@styles/reset.styl"
 import "@styles/fontsource.styl"
 
 interface Props {
@@ -7,7 +8,7 @@ interface Props {
   
 }
 
-const { title = "No title", lang = "en" } = Astro.props;
+const { title = "No title", lang = "en"} = Astro.props;
 ---
 
 <html lang={lang}>

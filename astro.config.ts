@@ -1,15 +1,36 @@
 import { defineConfig } from 'astro/config';
 
-import svelte from '@astrojs/svelte';
 import icon from 'astro-icon';
+import svelte from '@astrojs/svelte';
+import mdx from '@astrojs/mdx';
 import UnoCSS from 'unocss/astro';
+import purgecss from 'astro-purgecss';
+import playformCompress from '@playform/compress';
+import compressor from 'astro-compressor';
+
+import astrobook from 'astrobook';
 
 import tsconfig from './tsconfig.json' assert { type: 'json' };
 import { getAliases } from './scripts/alias.ts';
 
 export default defineConfig({
   server: { host: true, port: 2999 },
-  integrations: [svelte({ emitCss: false }), icon({ iconDir: 'src/icons' }), UnoCSS()],
+
+  integrations: [
+    icon({ iconDir: 'src/icons' }),
+    svelte({ emitCss: false }),
+    mdx(),
+    UnoCSS(),
+    purgecss(),
+    playformCompress(),
+    compressor({ brotli: true }),
+    import.meta.env.DEV &&
+      astrobook({
+        directory: 'src/components/astrobook-stories',
+        subpath: '/docs/components',
+        head: '@layouts/Astrobook.astro',
+      }),
+  ],
   vite: {
     resolve: {
       alias: getAliases(tsconfig.compilerOptions.paths),
