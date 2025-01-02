@@ -1,16 +1,27 @@
 {
     "recommendations": [
+        // Language supports
         "astro-build.astro-vscode",
-        "davidanson.vscode-markdownlint",
-        "editorconfig.editorconfig",
-        "dbaeumer.vscode-eslint",
-        "biomejs.biome",
-        "esbenp.prettier-vscode",
-        "stylelint.vscode-stylelint",
         "sysoev.language-stylus",
         "svelte.svelte-vscode",
         "antfu.unocss",
+        "unifiedjs.vscode-mdx",
+        "redhat.vscode-yaml",
+
+        // Tools
+        "editorconfig.editorconfig",
+
+        // Linters, Formatters
+        "stylelint.vscode-stylelint",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "biomejs.biome",
+        "davidanson.vscode-markdownlint",
+
+        // Editor
         "usernamehw.errorlens",
-        "yoavbls.pretty-ts-errors"
+        "yoavbls.pretty-ts-errors",
+        "christian-kohler.path-intellisense",
+        "oderwat.indent-rainbow"
     ]
 }

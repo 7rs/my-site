@@ -1,0 +1,29 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Install dependencies",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "pnpm i"
+        },
+        {
+            "name": "Launch development server",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "pnpm dev"
+        },
+        {
+            "name": "Build",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "pnpm build"
+        },
+        {
+            "name": "Preview",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "pnpm prev"
+        }
+    ]
+}

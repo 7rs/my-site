@@ -1,0 +1,29 @@
+---
+import type { Heading, Navigation } from "@scripts/components/headerTypes.ts";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  headerText?: string;
+  headerIcon?: string;
+  headings?: Heading[];
+  navigatoins?: Navigation[];
+}
+
+const { headerText, headerIcon, headings = [], navigatoins = []} = Astro.props;
+---
+
+<header>
+  <section class="p-4 flex justify-between items-center bg-slate-400 rounded-xl">
+    <div>
+      {headerIcon && <Icon name={headerIcon} />}
+      <h1>{headerText}</h1>
+    </div>
+    <div>
+      <Icon name="line-md:light-dark-loop" />
+      <Icon name="line-md:menu" />
+      <Icon name="line-md:chevron-small-down" />
+    </div>
+  </section>
+  <section class="md:hidden">
+  </section>
+</header>
