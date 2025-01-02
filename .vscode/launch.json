@@ -5,7 +5,7 @@
             "name": "Install dependencies",
             "type": "node-terminal",
             "request": "launch",
-            "command": "pnpm dev"
+            "command": "pnpm i"
         },
         {
             "name": "Launch development server",
