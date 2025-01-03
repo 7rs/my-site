@@ -1,0 +1,21 @@
+---
+import type { Navigation } from "@scripts/components/common";
+import Anchor from "@components/Anchor.astro";
+
+interface Props {
+  navigations: Navigation[];
+  url?: string;
+}
+
+const { navigations = [], url = Astro.url.pathname } = Astro.props;
+---
+
+<nav class="flex justify-around flex-wrap">
+  {
+    navigations.map((nav) => (
+      <Anchor className={nav.url === url ? "nav-active" : "nav-link"} href={nav.url}>
+        {nav.label}
+      </Anchor>
+    ))
+  }
+</nav>

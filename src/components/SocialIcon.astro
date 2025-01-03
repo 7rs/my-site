@@ -1,0 +1,20 @@
+---
+import type { Social } from "@scripts/components/footerTypes";
+import { Icon } from "astro-icon/components";
+import Anchor from "@components/Anchor.astro";
+
+interface Props {
+  social: Social;
+}
+
+const { social } = Astro.props;
+---
+
+<Anchor
+  href={social.url}
+  openAsNew
+  style={social.hoveredColor ? `--hover-color: ${social.hoveredColor}` : `--hover-color: var(--sub-color)`}
+  className="icon-big hover:text-[var(--hover-color)]"
+>
+  <Icon name={social.icon} title={social.label} />
+</Anchor>

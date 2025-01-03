@@ -1,6 +1,10 @@
 ---
 import type { Social, Navigation, CopyrightInformation, BuildInformations } from "@scripts/components/footerTypes";
 import { Icon } from "astro-icon/components";
+import IconText from "@components/IconText.astro";
+import Anchor from "@components/Anchor.astro";
+import SocialIcon from "@components/SocialIcon.astro";
+import Navigations from "@components/Navigations.astro";
 
 export interface Props {
   socials?: Social[];
@@ -16,15 +20,15 @@ const {
   copyrightInformation = {} as CopyrightInformation,
   buildInformations = {} as BuildInformations,
   url = Astro.url.pathname,
-  ...props
 } = Astro.props;
 ---
 
-<footer class="bg-sub flex justify-center items-center">
-  <div class="py-6 px-8 text-main flex flex-col gap-4 w-full | max-w-[var(--md-width)] md:max-w-[var(--lg-width)]">
-    <!-- Stage 1 -->
-    <section class="flex justify-center md:justify-between | flex-col md:flex-row">
-      <button id="scroll-to-button" class="icon-text rounded-shadow justify-center">
+<footer class="py-6 px-8 flex justify-center items-center bg-sub">
+  <div class="w-full flex flex-col gap-4 text-main | max-w-[var(--md-width)] md:max-w-[var(--lg-width)]">
+    <section class="flex | flex-col md:flex-row justify-center md:justify-between">
+
+      <!-- Scroll top -->
+      <button id="scroll-to-button" class="icon-text justify-center rounded-shadow">
         <Icon name="line-md:arrow-align-top" />
         <p>Return to top of page</p>
       </button>
@@ -34,55 +38,30 @@ const {
           window.scroll({ top: 0, behavior: "smooth" });
         });
       </script>
-      <div class="flex gap-3 items-center justify-center">
-        {
-          socials.map((social) => (
-            <a
-              href={social.url}
-              style={social.hoveredColor ? `--hover-color: ${social.hoveredColor}` : `--hover-color: var(--sub-color)`}
-              class="icon-big hover:text-[var(--hover-color)]"
-            >
-              <Icon name={social.icon} title={social.label} />
-            </a>
-          ))
-        }
+
+      <!-- Social icons -->
+      <div class="flex justify-center items-center gap-3 flex-wrap">
+        {socials.map((social) => <SocialIcon social={social} />)}
       </div>
     </section>
 
-    <!-- Stage 2 -->
-    <nav class="flex justify-around">
-      {
-        navigations.map((nav) => (
-          <a class={nav.url === url ? "nav-active" : "nav-link"} href={nav.url}>
-            {nav.label}
-          </a>
-        ))
-      }
-    </nav>
+    <!-- Navigations -->
+    <Navigations navigations={navigations} url={url} />
 
-    <!-- Stage 3 -->
-    <section class="flex justify-center items-center md:justify-between | flex-col md:flex-row">
-      <a class="no-underline text-inherit" href={copyrightInformation.url ?? ""}>
-        <article class="icon-text">
-          {copyrightInformation.icon && <Icon name={copyrightInformation.icon} {...props} />}
-          <p>{copyrightInformation.description}</p>
-        </article>
-      </a>
-      <div class="flex justify-center">
-        {
-          buildInformations.hosting && (
-            <article class="icon-text">
-              <Icon name="simple-icons:cloudflare" />
-              <p>{buildInformations.hosting}</p>
-            </article>
-          )
-        }
+    <section class="flex items-center | flex-col md:flex-row justify-center md:justify-between">
+      <!-- Copyright infotmation -->
+      <Anchor href={copyrightInformation.url}
+        ><IconText icon={copyrightInformation.icon}>{copyrightInformation.description}</IconText></Anchor
+      >
+
+      <div class="flex justify-center flex-wrap">
+        <!-- Build information: Hosting -->
+        {buildInformations.hosting && <IconText icon="simple-icons:cloudflare">{buildInformations.hosting}</IconText>}
+
+        <!-- Build information: Astro version -->
         {
           buildInformations.astroVersion && (
-            <article class="icon-text">
-              <Icon name="simple-icons:astro" />
-              <p>{buildInformations.astroVersion}</p>
-            </article>
+            <IconText icon="simple-icons:astro">{buildInformations.astroVersion}</IconText>
           )
         }
       </div>
