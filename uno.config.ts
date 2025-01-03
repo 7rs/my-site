@@ -13,7 +13,7 @@ export default defineConfig({
   shortcuts: {
     'icon-text': 'p-2 flex items-center gap-2 [&>svg]:w-4 [&>svg]:h-4 text-inherit',
     'icon-big': 'hover:scale-125 transition-all text-inherit',
-    'nav-link': 'underline text-main font-bold',
+    'nav-link': 'underline decoration-1.5 text-main font-bold hover:text-link hover:decoration-0 transition-all',
     'rounded-shadow': 'hover:bg-slate-400 rounded-xl transition-all',
   },
   theme: {

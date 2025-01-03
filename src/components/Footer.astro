@@ -22,11 +22,17 @@ const {
   <div class="py-6 px-8 text-main flex flex-col gap-4 w-full max-w-[var(--lg-width)]">
     <!-- Stage 1 -->
     <section class="flex justify-between | flex-col md:flex-row">
-      <button class="icon-text rounded-shadow">
+      <button id="scroll-to-button" class="icon-text rounded-shadow">
         <Icon name="line-md:arrow-align-top" />
         <p>Return to top of page</p>
       </button>
-      <div class="flex gap-3">
+      <script>
+        const button = window.document.getElementById("scroll-to-button");
+        button?.addEventListener("click", () => {
+          window.scroll({ top: 0, behavior: "smooth" });
+        });
+      </script>
+      <div class="flex gap-3 items-center">
         {
           socials.map((social) => (
             <a
