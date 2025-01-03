@@ -7,6 +7,7 @@ export interface Props {
   navigations?: Navigation[];
   copyrightInformation?: CopyrightInformation;
   buildInformations?: BuildInformations;
+  url?: string;
 }
 
 const {
@@ -14,15 +15,16 @@ const {
   navigations = [],
   copyrightInformation = {} as CopyrightInformation,
   buildInformations = {} as BuildInformations,
+  url = Astro.url.pathname,
   ...props
 } = Astro.props;
 ---
 
 <footer class="bg-sub flex justify-center items-center">
-  <div class="py-6 px-8 text-main flex flex-col gap-4 w-full max-w-[var(--lg-width)]">
+  <div class="py-6 px-8 text-main flex flex-col gap-4 w-full | max-w-[var(--md-width)] md:max-w-[var(--lg-width)]">
     <!-- Stage 1 -->
-    <section class="flex justify-between | flex-col md:flex-row">
-      <button id="scroll-to-button" class="icon-text rounded-shadow">
+    <section class="flex justify-center md:justify-between | flex-col md:flex-row">
+      <button id="scroll-to-button" class="icon-text rounded-shadow justify-center">
         <Icon name="line-md:arrow-align-top" />
         <p>Return to top of page</p>
       </button>
@@ -32,7 +34,7 @@ const {
           window.scroll({ top: 0, behavior: "smooth" });
         });
       </script>
-      <div class="flex gap-3 items-center">
+      <div class="flex gap-3 items-center justify-center">
         {
           socials.map((social) => (
             <a
@@ -51,7 +53,7 @@ const {
     <nav class="flex justify-around">
       {
         navigations.map((nav) => (
-          <a class="nav-link" href={nav.url}>
+          <a class={nav.url === url ? "nav-active" : "nav-link"} href={nav.url}>
             {nav.label}
           </a>
         ))
@@ -59,14 +61,14 @@ const {
     </nav>
 
     <!-- Stage 3 -->
-    <section class="flex justify-between | flex-col md:flex-row">
+    <section class="flex justify-center items-center md:justify-between | flex-col md:flex-row">
       <a class="no-underline text-inherit" href={copyrightInformation.url ?? ""}>
         <article class="icon-text">
           {copyrightInformation.icon && <Icon name={copyrightInformation.icon} {...props} />}
           <p>{copyrightInformation.description}</p>
         </article>
       </a>
-      <div class="flex">
+      <div class="flex justify-center">
         {
           buildInformations.hosting && (
             <article class="icon-text">
