@@ -1,0 +1,83 @@
+---
+import type { Social, Navigation, CopyrightInformation, BuildInformations } from "@scripts/components/footerTypes";
+import { Icon } from "astro-icon/components";
+
+export interface Props {
+  socials?: Social[];
+  navigations?: Navigation[];
+  copyrightInformation?: CopyrightInformation;
+  buildInformations?: BuildInformations;
+}
+
+const {
+  socials = [],
+  navigations = [],
+  copyrightInformation = {} as CopyrightInformation,
+  buildInformations = {} as BuildInformations,
+  ...props
+} = Astro.props;
+---
+
+<footer class="bg-sub flex justify-center items-center">
+  <div class="py-6 px-8 text-main flex flex-col gap-4 w-full max-w-[var(--lg-width)]">
+    <!-- Stage 1 -->
+    <section class="flex justify-between | flex-col md:flex-row">
+      <button class="icon-text rounded-shadow">
+        <Icon name="line-md:arrow-align-top" />
+        <p>Return to top of page</p>
+      </button>
+      <div class="flex gap-3">
+        {
+          socials.map((social) => (
+            <a
+              href={social.url}
+              style={social.hoveredColor ? `--hover-color: ${social.hoveredColor}` : `--hover-color: var(--sub-color)`}
+              class="icon-big hover:text-[var(--hover-color)]"
+            >
+              <Icon name={social.icon} title={social.label} />
+            </a>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- Stage 2 -->
+    <nav class="flex justify-around">
+      {
+        navigations.map((nav) => (
+          <a class="nav-link" href={nav.url}>
+            {nav.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <!-- Stage 3 -->
+    <section class="flex justify-between | flex-col md:flex-row">
+      <a class="no-underline text-inherit" href={copyrightInformation.url ?? ""}>
+        <article class="icon-text">
+          {copyrightInformation.icon && <Icon name={copyrightInformation.icon} {...props} />}
+          <p>{copyrightInformation.description}</p>
+        </article>
+      </a>
+      <div class="flex">
+        {
+          buildInformations.hosting && (
+            <article class="icon-text">
+              <Icon name="simple-icons:cloudflare" />
+              <p>{buildInformations.hosting}</p>
+            </article>
+          )
+        }
+        {
+          buildInformations.astroVersion && (
+            <article class="icon-text">
+              <Icon name="simple-icons:astro" />
+              <p>{buildInformations.astroVersion}</p>
+            </article>
+          )
+        }
+      </div>
+    </section>
+  </div>
+</footer>
