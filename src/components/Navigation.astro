@@ -1,0 +1,15 @@
+---
+import Anchor from "@components/Anchor.astro";
+import type { Navigation } from "@scripts/components/common";
+
+interface Props {
+  navigation: Navigation;
+  url?: string;
+}
+
+const { navigation, url = Astro.url.pathname } = Astro.props;
+---
+
+<Anchor className={navigation.url === url ? "nav-active" : "nav-link"} href={navigation.url}>
+  {navigation.label}
+</Anchor>

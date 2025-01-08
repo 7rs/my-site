@@ -1,0 +1,28 @@
+---
+import { Icon } from "astro-icon/components";
+
+import { generateRandomString } from "@scripts/random-string";
+
+interface Props {
+  label?: string;
+}
+
+const { label = "Return to top of page" } = Astro.props;
+const elementId = generateRandomString(32);
+---
+
+<button id={elementId} class="icon-text rounded-shadow justify-center">
+  <Icon name="line-md:arrow-align-top" />
+  <p>{label}</p>
+</button>
+
+<script define:vars={elementId}>
+  if (elementId == null) {
+    return;
+  }
+
+  const button = window.document.getElementById(elementId);
+  button?.addEventListener("click", () => {
+    window.scroll({ top: 0, behavior: "smooth" });
+  });
+</script>
