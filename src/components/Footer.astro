@@ -1,0 +1,59 @@
+---
+import IconText from "@components/IconText.astro";
+import Anchor from "@components/Anchor.astro";
+import SocialIcon from "@components/SocialIcon.astro";
+import NavigationTemplate from "@components/Navigation.astro";
+import TopButton from "@components/TopButton.astro";
+import type { Social, Navigation, CopyrightInformation, BuildInformations } from "@scripts/components/footer-types";
+
+export interface Props {
+  socials?: Social[];
+  navigations?: Navigation[];
+  copyrightInformation?: CopyrightInformation;
+  buildInformations?: BuildInformations;
+  url?: string;
+}
+
+const {
+  socials = [],
+  navigations = [],
+  copyrightInformation = {} as CopyrightInformation,
+  buildInformations = {} as BuildInformations,
+  url = Astro.url.pathname,
+} = Astro.props;
+---
+
+<footer class="footer-frame">
+  <div class="footer-body">
+    <section class="flex flex-wrap gap-y-2 items-center | justify-center md:justify-between">
+      <TopButton />
+
+      <!-- Social icons -->
+      <div class="social-icons">
+        {socials.map((social) => <SocialIcon social={social} />)}
+      </div>
+    </section>
+
+    <!-- Navigations -->
+    <nav class="nav-list">
+      {navigations.map((nav) => <NavigationTemplate navigation={nav} url={url} />)}
+    </nav>
+
+    <section class="flex flex-wrap items-center | justify-center md:justify-between">
+      <!-- Copyright infotmation -->
+      <Anchor href={copyrightInformation.url}>
+        <IconText icon={copyrightInformation.icon}>{copyrightInformation.description}</IconText>
+      </Anchor>
+
+      <!-- Build information -->
+      <div class="flex flex-wrap justify-center">
+        {buildInformations.hosting && <IconText icon="simple-icons:cloudflare">{buildInformations.hosting}</IconText>}
+        {
+          buildInformations.astroVersion && (
+            <IconText icon="simple-icons:astro">{buildInformations.astroVersion}</IconText>
+          )
+        }
+      </div>
+    </section>
+  </div>
+</footer>
