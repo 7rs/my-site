@@ -106,9 +106,9 @@
 
   Displays and indicates an current page.  
 
-### Getting copyright informations automatically  
+### ~~Getting copyright informations automatically~~  
 
-  The license information is get from `LICENSE` file or `package.json` from the repository directory and used.  
+  ~~The license information is get from `LICENSE` file or `package.json` from the repository directory and used.~~  
 
 ## Prototypes  
 
