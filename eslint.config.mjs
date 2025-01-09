@@ -35,6 +35,7 @@ export default tseslint.config(
       'import/no-named-as-default-member': 'off',
       'import/no-unresolved': 'off',
       'n/no-missing-import': 'off',
+      'n/no-extraneous-import': 'off',
     },
   },
 
