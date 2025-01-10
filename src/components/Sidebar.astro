@@ -1,0 +1,26 @@
+---
+import NavigationTemplate from "@components/Navigation.astro";
+import Headings from "@components/Headings.svelte"
+import type { Heading, Navigation } from "@scripts/components/common";
+
+interface Props {
+  title?: string;
+  headings?: Heading[];
+  navigations?: Navigation[];
+  url?: string;
+}
+
+const { title, headings = [], navigations = [], url = Astro.url.pathname } = Astro.props;
+---
+
+<aside class="sidebar-body">
+  <p class="font-bold text-2xl">{title}</p>
+
+  <!-- Headings -->
+   <Headings headings={headings} client:load />
+
+  <!-- Navigations -->
+  <nav class="nav-list justify-between">
+    {navigations.map((nav) => <NavigationTemplate navigation={nav} url={url} />)}
+  </nav>
+</aside>

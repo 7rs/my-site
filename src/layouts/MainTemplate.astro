@@ -1,22 +1,50 @@
 ---
+import Sidebar from "@components/Sidebar.astro";
 import "@styles/main.styl";
 
+import type { Heading } from "@scripts/components/common";
+import Footer from "@components/Footer.astro";
+
+import type { Frontmatter } from "@content/config";
+
 interface Props {
+  headings?: Heading[];
+  frontmatter?: Frontmatter;
   title?: string;
   lang?: string;
-  
 }
 
-const { title = "No title", lang = "en"} = Astro.props;
+const { frontmatter, title = frontmatter?.title ?? "No title", lang = "en", headings = [] } = Astro.props;
 ---
 
 <html lang={lang}>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>{title}</title>
   </head>
   <body>
-    <main><slot /></main>
+    <main class="max-w-[var(--lg-width)]">
+      <slot />
+    </main>
+    <Sidebar title={title} headings={headings} />
+    <Footer />
   </body>
 </html>
+
+<style is:global lang="stylus">
+  body
+    display grid
+    grid-template-areas \
+            "main sidebar" \
+            "footer footer";
+
+  footer
+    grid-area footer
+
+  aside
+    grid-area sidebar
+
+  main
+    grid-area main
+</style>

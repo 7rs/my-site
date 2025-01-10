@@ -1,14 +1,13 @@
-import _Footer from '@components/Footer.astro';
+import Footer from '@components/Footer.astro';
 
 export default {
-  component: _Footer,
+  component: Footer,
 };
 
 export const Empty = {
   args: {},
 };
 
-// https://www.patreon.com/7rs
 export const Full = {
   args: {
     socials: [

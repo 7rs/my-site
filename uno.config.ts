@@ -17,9 +17,14 @@ export default defineConfig({
     'footer-frame': 'py-6 px-8 flex justify-center items-center bg-sub',
     'footer-body': 'w-full flex flex-col gap-4 text-main max-w-[var(--md-width)] md:max-w-[var(--lg-width)]',
     'social-icons': 'flex flex-wrap gap-5 justify-center items-center',
-    'nav-list': 'flex flex-wrap justify-around',
+    'nav-list': 'w-full flex flex-wrap justify-around',
     'nav-link': 'underline decoration-1.5 text-main font-bold hover:text-link hover:decoration-0 transition-all',
     'nav-active': 'nav-link text-active',
+    // Sidebar
+    'sidebar-body':
+      'min-w-[300px] max-w-[300px] py-8 px-6 flex-col gap-7 justify-center items-center rounded-xl text-main bg-sub h-min hidden xl:flex',
+    'heading-list': 'overflow-y-auto w-full max-h-[var(--sm-width)] flex flex-col gap-2',
+    'heading-text': 'break-words text-wrap no-underline hover:underline hover:text-link transition-all',
   },
   theme: {
     breakpoints: {
@@ -36,4 +41,5 @@ export default defineConfig({
       active: 'var(--active-color)',
     },
   },
+  safelist: [...Array.from({ length: 6 }, (_, i) => `ml-${(i + 1) * 3}`)],
 });
