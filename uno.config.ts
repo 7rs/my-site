@@ -20,8 +20,11 @@ export default defineConfig({
     'nav-list': 'w-full flex flex-wrap justify-around',
     'nav-link': 'underline decoration-1.5 text-main font-bold hover:text-link hover:decoration-0 transition-all',
     'nav-active': 'nav-link text-active',
+    // Sidebar
     'sidebar-body':
-      'hidden xl:flex flex-col py-6 px-8 justify-center items-center text-main bg-sub min-w-[300px] max-w-[300px] rounded-xl',
+      'min-w-[300px] max-w-[300px] py-8 px-6 flex-col gap-7 justify-center items-center rounded-xl text-main bg-sub h-min hidden xl:flex',
+    'heading-list': 'overflow-y-auto w-full max-h-[var(--sm-width)] flex flex-col gap-2',
+    'heading-text': 'break-words text-wrap no-underline hover:underline hover:text-link transition-all',
   },
   theme: {
     breakpoints: {

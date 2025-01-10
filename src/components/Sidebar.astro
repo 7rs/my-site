@@ -13,11 +13,11 @@ interface Props {
 const { title, headings = [], navigations = [], url = Astro.url.pathname } = Astro.props;
 ---
 
-<aside class="sidebar-body gap-7 h-min">
+<aside class="sidebar-body">
   <p class="font-bold text-2xl">{title}</p>
 
   <!-- Headings -->
-   <Headings title={title} headings={headings} client:load />
+   <Headings headings={headings} client:load />
 
   <!-- Navigations -->
   <nav class="nav-list justify-between">
